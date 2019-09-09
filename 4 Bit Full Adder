@@ -1,0 +1,35 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 08.09.2019 14:48:51
+// Design Name: 
+// Module Name: FourBitAdd
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module FourBitAdd(
+    input [3:0] op1 ,
+    input [3:0] op2,
+    input Cin,
+    output [3:0] Result,
+    output Cout
+    );
+    wire C1,C2,C3;
+    SingleBitAdd SbA0 (op1[0],op2[0],Cin,Result[0],C1);
+    SingleBitAdd SbA1 (op1[1],op2[1],C1,Result[1],C2);
+    SingleBitAdd SbA2 (op1[2],op2[2],C2,Result[2],C3);
+    SingleBitAdd SbA3 (op1[3],op2[3],C3,Result[3],Cout);
+endmodule
