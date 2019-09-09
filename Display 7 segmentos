@@ -26,18 +26,13 @@ module segment7(
             9 : seg = 7'b0000100;
             
             //Creo que los para la seccion de abajo hay que cambiar los 1's y 0's
-            10 : seg = 7'b1110110;
-            //10 : seg = 7'b0001001;
-            11 : seg = 7'b0011111;
-            //11 : seg = 7'b1100000;
-            12 : seg = 7'b1001110;
-            //12 : seg = 7'b0110001;
-            13 : seg = 7'b0111101;
-            //13 : seg = 7'b1000010;
-            14 : seg = 7'b1001111;
-            //14 : seg = 7'b0110000;
-            15 : seg = 7'b1000111;
-            //15 : seg = 7'b0111000;
+            
+            10 : seg = 7'b0001000;           
+            11 : seg = 7'b1100000;          
+            12 : seg = 7'b0110001;           
+            13 : seg = 7'b1000010;          
+            14 : seg = 7'b0110000;        
+            15 : seg = 7'b0111000;
             
             //switch off 7 segment character when the bcd digit is not a decimal number.
             default : seg = 7'b1111111; 
