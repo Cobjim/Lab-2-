@@ -1,0 +1,40 @@
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 07.09.2019 16:34:52
+// Design Name: 
+// Module Name: nCont
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module nCont(clk,rst,cnt);
+    parameter n = 3;
+    input clk, rst;
+    output [n:0] cnt;
+    reg [n:0] cnt;
+    initial
+    cnt <= 0; 	  	          
+    always @ (posedge clk)
+    if (rst) begin
+      cnt <= 0;
+    end else begin : CONT
+      while (clk) begin
+        cnt <= cnt + 1;
+        disable CONT;
+      end
+    end 
+      
+endmodule
