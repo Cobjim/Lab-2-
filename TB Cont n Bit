@@ -1,0 +1,47 @@
+`timescale 10ns / 10ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 07.09.2019 16:33:52
+// Design Name: 
+// Module Name: TBcont
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module TBcont();
+   // Inputs
+   reg clk;
+   reg rst;
+   // Outputs
+   wire [3:0] cnt;
+   //Unit Under Test (UUT)
+   nCont uut (
+      .cnt(cnt), 
+      .clk(clk), 
+      .rst(rst)
+   );
+   initial begin
+      //Inputs
+      clk = 0;
+      rst = 0;
+      //Reset after delay
+      #0 rst = 0;
+      #40 rst = 1;
+      #20 rst = 0;
+   end
+   //Clock
+   always
+      #2 clk = !clk;
+endmodule
